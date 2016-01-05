@@ -1,0 +1,21 @@
+﻿<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">Search</h3>
+    </div>
+    <div class="panel-body">
+        @using (Html.BeginForm(
+                                    "Search",           // action
+                                    "Movie",             // controller
+                                    FormMethod.Get,     // method
+                                    new { id = "search-form" })) // html attributes
+        {
+            <div class="form-group">
+
+                @Html.TextBox("s", "", new { @class = "form-control", placeholder = "Search" })
+            </div>
+                    <p>
+                        <input type="submit" value="Search" class="btn btn-primary">
+                    </p>
+        }
+    </div>
+</div>

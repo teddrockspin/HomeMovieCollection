@@ -1,0 +1,101 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Manage Movies, Genres, and Actors</title>
+
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+
+    <!-- jquery library -->
+    <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
+
+    <!-- jquery ui library -->
+    <script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
+    <link href="@Url.Content("~/Content/themes/simple/jqueryuicustom/css/sunny/jquery-ui-1.9.2.custom.min.css")" rel="stylesheet" />
+
+    <!-- jqgrid -->
+    <link href="@Url.Content("~/Scripts/jqgrid/css/ui.jqgrid.css")" rel="stylesheet" />
+    <script src="@Url.Content("~/Scripts/jqgrid/js/jquery.jqGrid.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/jqgrid/js/i18n/grid.locale-en.js")"></script>
+
+    <!-- tinyMCE -->
+    <script src="@Url.Content("~/Scripts/tiny_mce/tiny_mce.js")"></script>
+
+    <link href="@Url.Content("~/Content/themes/simple/admin.css")" rel="stylesheet" />
+    <script src="@Url.Content("~/Scripts/admin.js")"></script>
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("My Home Movie Collection", "Movies", "Movie", new { area = "" }, new { @class = "navbar-brand" })
+
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li><a href="/Admin">Admin</a></li>
+                        <li><a href="/Logout">Logout</a></li>
+                    }
+                    else
+                    {
+                        <li><a href="/Login">Login</a></li>
+                    }
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Manage Movies, Genres and Actors</h2>
+
+                <!-- tab control -->
+                <div id="tabs">
+                    <ul>
+                        <li><a href="#tab-movies">Movies</a></li>
+                        <li><a href="#tab-genres">Genres</a></li>
+                        <li><a href="#tab-actors">Actors</a></li>
+                    </ul>
+
+                    <div id="tab-movies" class="tab">
+                        <table id="tableMovies" class="grid"></table>
+                        <div id="pagerMovies" class="pager">
+                        </div>
+                    </div>
+
+                    <div id="tab-genres" class="tab">
+                        <table id="tableGenres" class="grid"></table>
+                        <div id="pagerGenres" class="pager">
+                        </div>
+                    </div>
+
+                    <div id="tab-actors" class="tab">
+                        <table id="tableActors" class="grid"></table>
+                        <div id="pagerActors" class="pager">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+              
+</body>
+</html>

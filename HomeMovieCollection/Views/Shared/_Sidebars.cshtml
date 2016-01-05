@@ -1,0 +1,7 @@
+﻿@model HomeMovieCollection.Models.WidgetViewModel
+
+<div id="sidebars">
+    @Html.Partial("_Search")
+    @Html.Partial("_Genres", Model.Genres)
+    @Html.Partial("_TopActors", Model.Actors)
+</div>

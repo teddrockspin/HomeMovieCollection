@@ -1,0 +1,23 @@
+﻿@helper Actors(System.Web.Mvc.HtmlHelper htmlHelper,
+    IList<HomeMovieCollection.Core.Objects.Actor> actors)
+{
+foreach (var actor in actors)
+{
+        <div class="tags-div">
+            @HomeMovieCollection.ActionLinkExtensions.ActorLink(htmlHelper, actor)
+        </div>
+}
+}
+
+@helper Genres(System.Web.Mvc.HtmlHelper htmlHelper,
+    IList<HomeMovieCollection.Core.Objects.Genre> genres)
+{
+foreach (var genre in genres)
+{
+        <div class="tags-div">
+            @HomeMovieCollection.ActionLinkExtensions.GenreLink(htmlHelper, genre)
+        </div>
+}
+}
+
+

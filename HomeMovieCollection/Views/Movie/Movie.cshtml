@@ -1,0 +1,50 @@
+﻿@model HomeMovieCollection.Core.Objects.Movie
+
+@{
+    ViewBag.Title = Model.Title;
+}
+
+<div class="row">
+
+    <div class="movie-title">
+        <h1>@Html.MovieLink(Model)</h1>
+    </div>
+
+</div>
+<div class="row">
+    <div class="movie-body">
+        @Html.Raw(Model.Description)
+    </div>
+
+    <div class="movie-genre">
+        <span>Genre:</span> @Html.GenreLink(Model.Genre)
+    </div>
+
+    <div>
+        <span>Format:</span> @Model.Format
+    </div>
+
+    <div>
+        <span>Region:</span> @Model.Region
+    </div>
+
+    <div>
+        <span>Runtime:</span> @Model.RunTime minutes
+    </div>
+
+    <div class="movie-actors">
+        <span>Actors:</span> @Helpers.Actors(Html, Model.Actors)
+    </div>
+
+    <div class="Director">
+        <span>Director:</span> @Model.Director
+    </div>
+
+    <div class="release-date">
+       <span>Released On:</span> @Model.ReleaseDate.ToShortDateString()
+    </div>
+
+</div>
+
+
+

@@ -1,0 +1,25 @@
+﻿@model HomeMovieCollection.Core.Objects.Movie
+
+<tr>
+    <td>
+        <strong>
+            @Html.MovieLink(Model)
+        </strong>
+    </td>
+    <td>
+        @Html.Raw(Model.Director)
+    </td>
+    <td>
+        @Model.ReleaseDate.ToShortDateString()
+    </td>
+    <td>
+        @Model.RunTime <span>Minutes</span>
+    </td>
+    <td>
+        @Html.GenreLink(Model.Genre)
+        @*@Helpers.Genres(Html, Model.Genres)*@
+    </td>
+    <td>
+        <span>Actors:</span>@Helpers.Actors(Html, Model.Actors)
+    </td>
+</tr>
