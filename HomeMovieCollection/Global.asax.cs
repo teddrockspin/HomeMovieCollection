@@ -23,7 +23,7 @@ namespace HomeMovieCollection
 
             protected override void OnApplicationStarted()
             {
-                ModelBinders.Binders.Add(typeof(Movie), new PostModelBinder(Kernel));
+                ModelBinders.Binders.Add(typeof(Movie), new MovieModelBinder(Kernel));
                 RouteConfig.RegisterRoutes(RouteTable.Routes);
                 base.OnApplicationStarted();
             }

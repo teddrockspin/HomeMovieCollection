@@ -7,11 +7,11 @@ using System.Web.Mvc;
 
 namespace HomeMovieCollection
 {
-    public class PostModelBinder : DefaultModelBinder
+    public class MovieModelBinder : DefaultModelBinder
     {
         private readonly IKernel _kernel;
 
-        public PostModelBinder(IKernel kernel)
+        public MovieModelBinder(IKernel kernel)
         {
             _kernel = kernel;
         }
